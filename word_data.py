@@ -3,7 +3,7 @@ WORD_QUIZ_DATA = {
         "ett erbjudande": {"en": "offer", "ru": "предложение", "uk": "пропозиція"},
         "en ekonom": {"en": "economist", "ru": "экономист", "uk": "економіст"},
         "en möbel": {"en": "piece of furniture", "ru": "предмет мебели", "uk": "предмет меблів"},
-        "ett företag": {"en": "company", "ru": "company", "uk": "компанія"},
+        "ett företag": {"en": "company", "ru": "компания", "uk": "компанія"},
         "en utbildning": {"en": "education", "ru": "образование", "uk": "освіта"},
         "ett yrke": {"en": "profession", "ru": "профессия", "uk": "професія"},
         "ett val": {"en": "choice", "ru": "выбор", "uk": "вибір"},
