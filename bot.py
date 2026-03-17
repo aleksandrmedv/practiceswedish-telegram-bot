@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print("ENV TOKEN:", os.getenv("TELEGRAM_BOT_TOKEN"))
+
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 if not TOKEN:
