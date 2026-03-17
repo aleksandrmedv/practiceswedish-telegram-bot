@@ -277,14 +277,18 @@ async def send_word_question(message, context: ContextTypes.DEFAULT_TYPE) -> Non
         return
 
     topic_words = WORD_QUIZ_DATA[topic]
-
     remaining_words = context.user_data.get("remaining_words", [])
 
-    # Если слова закончились — начинаем тему заново
+    # Если текущий пул пуст — готовим новый в зависимости от режима
     if not remaining_words:
-        remaining_words = list(topic_words.keys())
-        random.shuffle(remaining_words)
-        context.user_data["remaining_words"] = remaining_words
+        prepare_word_pool(context, topic_words)
+        remaining_words = context.user_data.get("remaining_words", [])
+
+        # Если и после этого слов нет — значит ошибки закончились
+        if not remaining_words:
+            context.user_data["reinforce_mode"] = False
+            await message.reply_text(t(context, "no_words_to_reinforce"))
+            return
 
     word_sv = context.user_data["remaining_words"].pop()
     correct_answer = topic_words[word_sv][lang]
@@ -304,7 +308,6 @@ async def send_word_question(message, context: ContextTypes.DEFAULT_TYPE) -> Non
         f'{t(context, "topic_label")}: {topic}\n{t(context, "question", word=word_sv)}',
         reply_markup=build_word_keyboard(context, word_sv, options)
     )
-
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     context.user_data.clear()
@@ -361,14 +364,19 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if query.data == "reinforce_words":
         mode = context.user_data.get("mode")
         context.user_data["reinforce_mode"] = True
-        context.user_data["remaining_words"] = []
+
+        if mode == "words":
+            topic = context.user_data.get("topic")
+            if topic:
+                prepare_word_pool(context, WORD_QUIZ_DATA[topic])
+
+        else:
+            context.user_data["remaining_words"] = []
 
         if mode == "words":
             await send_word_question(query.message, context)
-
         elif mode == "nouns":
             await start_noun_quiz(query.message, context)
-
         elif mode == "verbs":
             await start_verb_quiz(query.message, context)
 
