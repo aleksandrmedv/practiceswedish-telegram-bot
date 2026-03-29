@@ -137,7 +137,7 @@ WORD_QUIZ_DATA = {
         "märker": {"en": "notices", "ru": "замечает", "uk": "помічає"},
         "rör på sig": {"en": "moves", "ru": "двигается", "uk": "рухається"},
         "sätter sig": {"en": "sits down", "ru": "садится", "uk": "сідає"},
-    }
+    },
 
     "Vad gör du för att leva hälsosamt?": {
         "hälsosam": {"en": "healthy", "ru": "здоровый, полезный для здоровья", "uk": "здоровий, корисний для здоров’я"},
