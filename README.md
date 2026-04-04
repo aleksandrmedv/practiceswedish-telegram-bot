@@ -30,6 +30,28 @@ The learning process is built in a **step-by-step interactive format**, making i
 
 ---
 
+## 📸 Screenshots
+
+### Main Menu
+![Menu](screenshots/menu.png)
+
+### Training Modes
+![Modes](screenshots/modes.png)
+
+### Topics Selection
+![Topics](screenshots/topics.png)
+
+### Verb Training
+![Verbs](screenshots/verbs.png)
+
+### Correct Answer
+![Correct](screenshots/correct.png)
+
+### Wrong Answer
+![Wrong](screenshots/wrong.png)
+
+---
+
 ## 🎯 Who is it for?
 
 * People learning Swedish from scratch
