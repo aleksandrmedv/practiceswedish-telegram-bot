@@ -181,5 +181,16 @@ WORD_QUIZ_DATA = {
         "en psykisk ohälsa": {"en": "mental ill-health", "ru": "психическое нездоровье", "uk": "психічне нездоров’я"},
         "en själ": {"en": "soul", "ru": "душа", "uk": "душа"},
     }
+    "Ord och uttryck": {
+        "bestämde sig": {"en": "decided", "ru": "решил(ся)", "uk": "вирішив(ся)"},
+        "gifte sig": {"en": "got married", "ru": "женился / вышла замуж", "uk": "одружився / вийшла заміж"},
+        "skiljer oss": {"en": "we are getting divorced", "ru": "мы разводимся", "uk": "ми розлучаємося"},
+        "klarade mig": {"en": "managed / coped", "ru": "справился", "uk": "впорався"},
+        "ångrat sig": {"en": "regretted", "ru": "пожалел", "uk": "пожалів"},
+        "ändrade sig": {"en": "changed (oneself / mind)", "ru": "изменился / передумал", "uk": "змінився / передумав"},
+        "skyndade sig": {"en": "hurried", "ru": "поторопился", "uk": "поспішив"},
+        "koncentrera sig": {"en": "to concentrate", "ru": "концентрироваться", "uk": "концентруватися"},
+        "utbildade sig": {"en": "got an education", "ru": "получил образование", "uk": "здобув освіту"}
+    }
 
 }
