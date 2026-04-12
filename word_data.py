@@ -180,7 +180,7 @@ WORD_QUIZ_DATA = {
         "energi": {"en": "energy", "ru": "энергия", "uk": "енергія"},
         "en psykisk ohälsa": {"en": "mental ill-health", "ru": "психическое нездоровье", "uk": "психічне нездоров’я"},
         "en själ": {"en": "soul", "ru": "душа", "uk": "душа"},
-    }
+    },
     "Ord och uttryck": {
         "bestämde sig": {"en": "decided", "ru": "решил(ся)", "uk": "вирішив(ся)"},
         "gifte sig": {"en": "got married", "ru": "женился / вышла замуж", "uk": "одружився / вийшла заміж"},
