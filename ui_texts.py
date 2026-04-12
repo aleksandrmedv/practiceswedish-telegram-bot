@@ -32,7 +32,13 @@ UI_TEXTS = {
         "verb_group_all": "All verbs",
         "verb_correct": "Correct ✔\n\n{word} = {answer}",
         "verb_wrong": "Wrong ❌\n\nCorrect answer: {word} = {answer}",
-
+        "order_bot": "Order a Bot",
+        "order_confirm": "Do you want to discuss a bot order?",
+        "order_yes": "Yes",
+        "order_no": "No",
+        "order_sent": "Thank you! Your request has been sent. I will contact you soon.",
+        "order_cancelled": "Okay, request cancelled.",
+        "no_words_to_reinforce": "No words left for practice. Great job! ✅",
     },
     "ru": {
         "welcome": "Привет! 👋\n\nДобро пожаловать в Swedish Practice Bot 🇸🇪\n\nВыберите язык:",
@@ -67,7 +73,13 @@ UI_TEXTS = {
         "verb_group_all": "Все глаголы",
         "verb_correct": "Правильно ✔\n\n{word} = {answer}",
         "verb_wrong": "Неправильно ❌\n\nПравильный ответ: {word} = {answer}",
-
+        "order_bot": "Заказать Бот",
+        "order_confirm": "Вы хотите обсудить заказ бота?",
+        "order_yes": "Да",
+        "order_no": "Нет",
+        "order_sent": "Спасибо! Ваша заявка отправлена. Я скоро с вами свяжусь.",
+        "order_cancelled": "Хорошо, заявка отменена.",
+        "no_words_to_reinforce": "Слова для закрепления закончились. Отличная работа! ✅",
     },
     "uk": {
         "welcome": "Привіт! 👋\n\nЛаскаво просимо до Swedish Practice Bot 🇸🇪\n\nОберіть мову:",
@@ -102,6 +114,12 @@ UI_TEXTS = {
         "verb_group_all": "Усі дієслова",
         "verb_correct": "Правильно ✔\n\n{word} = {answer}",
         "verb_wrong": "Неправильно ❌\n\nПравильна відповідь: {word} = {answer}",
-
+        "order_bot": "Заказать Бот",
+        "order_confirm": "Вы хотите обсудить заказ бота?",
+        "order_yes": "Да",
+        "order_no": "Нет",
+        "order_sent": "Спасибо! Ваша заявка отправлена. Я скоро с вами свяжусь.",
+        "order_cancelled": "Хорошо, заявка отменена.",
+        "no_words_to_reinforce": "Слова для закріплення закінчилися. Чудова робота! ✅",
     }
 }

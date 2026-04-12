@@ -6,9 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+ADMIN_CHAT_ID = os.getenv("ADMIN_CHAT_ID")
 
 if not TOKEN:
     raise ValueError("TELEGRAM_BOT_TOKEN не найден")
+
+if not ADMIN_CHAT_ID:
+    raise ValueError("ADMIN_CHAT_ID не найден")
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -38,6 +42,7 @@ def build_main_menu() -> InlineKeyboardMarkup:
         [InlineKeyboardButton("Swedish → English", callback_data="lang|en")],
         [InlineKeyboardButton("Swedish → Russian", callback_data="lang|ru")],
         [InlineKeyboardButton("Swedish → Ukrainian", callback_data="lang|uk")],
+        [InlineKeyboardButton("Order a Bot / Заказать Бот", callback_data="order_bot")],
     ]
     return InlineKeyboardMarkup(keyboard)
 
@@ -261,6 +266,20 @@ async def show_main_menu(message, context: ContextTypes.DEFAULT_TYPE) -> None:
         reply_markup=build_main_menu()
     )
 
+def build_order_confirm_menu(context: ContextTypes.DEFAULT_TYPE) -> InlineKeyboardMarkup:
+    keyboard = [
+        [
+            InlineKeyboardButton(
+                f'{UI_TEXTS["ru"]["order_yes"]} / {UI_TEXTS["en"]["order_yes"]}',
+                callback_data="order_yes"
+            ),
+            InlineKeyboardButton(
+                f'{UI_TEXTS["ru"]["order_no"]} / {UI_TEXTS["en"]["order_no"]}',
+                callback_data="order_no"
+            ),
+        ]
+    ]
+    return InlineKeyboardMarkup(keyboard)
 
 async def show_topic_menu(message, context: ContextTypes.DEFAULT_TYPE) -> None:
     await message.reply_text(
@@ -595,7 +614,42 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         )
         return
 
+    if query.data == "order_bot":
+        await query.message.reply_text(
+            f'{UI_TEXTS["ru"]["order_confirm"]}\n{UI_TEXTS["en"]["order_confirm"]}',
+            reply_markup=build_order_confirm_menu(context)
+        )
+        return
 
+    if query.data == "order_yes":
+        user = update.effective_user
+        username = f"@{user.username}" if user.username else "без username"
+        full_name = user.full_name
+        user_id = user.id
+
+        admin_text = (
+            "📩 Новый запрос на заказ бота\n\n"
+            f"Имя: {full_name}\n"
+            f"Username: {username}\n"
+            f"User ID: {user_id}\n"
+            "Пользователь хочет обсудить заказ бота."
+        )
+
+        await context.bot.send_message(
+            chat_id=int(ADMIN_CHAT_ID),
+            text=admin_text
+        )
+
+        await query.edit_message_text(
+            f'{UI_TEXTS["ru"]["order_sent"]}\n{UI_TEXTS["en"]["order_sent"]}'
+        )
+        return
+
+    if query.data == "order_no":
+        await query.edit_message_text(
+            f'{UI_TEXTS["ru"]["order_cancelled"]}\n{UI_TEXTS["en"]["order_cancelled"]}'
+        )
+        return
 
 app = ApplicationBuilder().token(TOKEN).build()
 
