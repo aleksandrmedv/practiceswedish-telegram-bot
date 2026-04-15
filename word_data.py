@@ -190,7 +190,18 @@ WORD_QUIZ_DATA = {
         "ändrade sig": {"en": "changed (oneself / mind)", "ru": "изменился / передумал", "uk": "змінився / передумав"},
         "skyndade sig": {"en": "hurried", "ru": "поторопился", "uk": "поспішив"},
         "koncentrera sig": {"en": "to concentrate", "ru": "концентрироваться", "uk": "концентруватися"},
-        "utbildade sig": {"en": "got an education", "ru": "получил образование", "uk": "здобув освіту"}
+        "utbildade sig": {"en": "got an education", "ru": "получил образование", "uk": "здобув освіту"},
+        "för 10 minuter sedan": {"en": "10 minutes ago", "ru": "10 минут назад", "uk": "10 хвилин тому"},
+        "får jag": {"en": "may I", "ru": "можно мне / могу ли я", "uk": "чи можу я"},
+        "störa dig": {"en": "disturb you", "ru": "побеспокоить тебя/вас", "uk": "потурбувати тебе/вас"},
+        "naturligtvis": {"en": "of course", "ru": "конечно", "uk": "звичайно"},
+        "var har ni dem": {"en": "where do you have them", "ru": "где они у вас", "uk": "де вони у вас"},
+        "vad synd": {"en": "what a pity", "ru": "как жаль", "uk": "яка шкода"},
+        "nog": {"en": "probably", "ru": "наверное / скорее всего", "uk": "мабуть / напевно"},
+        "får jag vänta": {"en": "I have to wait", "ru": "мне придётся подождать", "uk": "мені доведеться почекати"},
+        "ett par dagar": {"en": "a couple of days", "ru": "пару дней", "uk": "кілька днів"},
+        "har ni öppet": {"en": "are you open", "ru": "вы открыты", "uk": "ви відкриті"},
+        "tack så mycket igen": {"en": "thanks very much again", "ru": "большое спасибо ещё раз", "uk": "щиро дякую ще раз"}
     }
 
 }
